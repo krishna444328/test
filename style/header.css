@@ -161,9 +161,7 @@
 }
 
 /* Utility classes from Bootstrap-like frameworks */
-.d-xl-none {
-    /* display: none !important; */ /* For example, hide on extra-large screens */
-}
+
 /* You'd likely have a media query to make d-xl-none act as intended based on your framework */
 @media (min-width: 1200px) {
   .d-xl-none {
