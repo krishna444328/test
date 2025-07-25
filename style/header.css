@@ -1,0 +1,183 @@
+/* General Header Styling */
+.header {
+    width: 300px; /* Adjust as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9997;
+    transition: all 0.3s;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.dark-background {
+    background: #040b14; /* Example dark background */
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/* Header Toggle for Mobile */
+.header-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #fff; /* White color for the icon */
+    cursor: pointer;
+    z-index: 9999;
+    display: none; /* Hidden by default, shown on smaller screens */
+}
+
+@media (max-width: 1200px) {
+    .header {
+        left: -300px; /* Hide header off-screen on mobile */
+    }
+    .header-toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+    .header.header-show { /* Class added by JavaScript to show header */
+        left: 0;
+    }
+}
+
+/* Profile Image */
+.profile-img {
+    margin: 15px auto;
+    text-align: center;
+}
+
+.profile-img img {
+    padding: 8px;
+    background: #2c2f3f;
+    display: block;
+    width: 120px; /* Example size */
+    height: 120px; /* Example size */
+    border: 7px solid #2c2f3f;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Logo and Site Name */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.logo h1.sitename {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #149ddd; /* Example hover color */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Navigation Menu */
+.navmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navmenu li {
+    position: relative;
+}
+
+.navmenu a {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.navmenu a i.navicon {
+    font-size: 20px;
+    padding-right: 8px;
+    color: #6f7180;
+}
+
+.navmenu a:hover,
+.navmenu .active {
+    color: #fff;
+}
+
+.navmenu a:hover i.navicon,
+.navmenu .active i.navicon {
+    color: #149ddd; /* Example active/hover icon color */
+}
+
+/* Bi-list (likely Bootstrap Icons) specific styling */
+.bi {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes from Bootstrap-like frameworks */
+.d-xl-none {
+    /* display: none !important; */ /* For example, hide on extra-large screens */
+}
+/* You'd likely have a media query to make d-xl-none act as intended based on your framework */
+@media (min-width: 1200px) {
+  .d-xl-none {
+    display: none !important;
+  }
+}
+
+/* Responsive adjustments for overall layout if header is hidden */
+body {
+    margin-left: 300px; /* Push content to the right if header is fixed left */
+}
+
+@media (max-width: 1200px) {
+    body {
+        margin-left: 0; /* No margin on mobile when header is hidden */
+    }
+}
